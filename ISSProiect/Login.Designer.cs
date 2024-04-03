@@ -29,137 +29,176 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            button1 = new Button();
-            button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
+            LoginButton = new Button();
+            SignUpButton = new Button();
+            UsernameTextBox = new TextBox();
+            PasswordTextBox = new TextBox();
+            UserLabel = new Label();
+            PasswordLabel = new Label();
             bindingSource1 = new BindingSource(components);
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
+            NumeTextBox = new TextBox();
+            AdresaTextBox = new TextBox();
+            TelefonTextBox = new TextBox();
+            NumeLabel = new Label();
+            AdresaLabel = new Label();
+            TelefonLabel = new Label();
+            BackButton = new Button();
+            NewAccountButton = new Button();
+            AlreadyHasAccountButton = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // LoginButton
             // 
-            button1.Location = new Point(29, 241);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            LoginButton.Location = new Point(236, 231);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(94, 29);
+            LoginButton.TabIndex = 0;
+            LoginButton.Text = "Login";
+            LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
-            // button2
+            // SignUpButton
             // 
-            button2.Location = new Point(431, 241);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Sign up";
-            button2.UseVisualStyleBackColor = true;
+            SignUpButton.Location = new Point(440, 257);
+            SignUpButton.Name = "SignUpButton";
+            SignUpButton.Size = new Size(94, 29);
+            SignUpButton.TabIndex = 1;
+            SignUpButton.Text = "Sign up";
+            SignUpButton.UseVisualStyleBackColor = true;
+            SignUpButton.Click += SignUpButton_Click;
             // 
-            // textBox1
+            // UsernameTextBox
             // 
-            textBox1.Location = new Point(129, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(160, 27);
-            textBox1.TabIndex = 2;
+            UsernameTextBox.Location = new Point(210, 65);
+            UsernameTextBox.Name = "UsernameTextBox";
+            UsernameTextBox.Size = new Size(160, 27);
+            UsernameTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // PasswordTextBox
             // 
-            textBox2.Location = new Point(129, 128);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(160, 27);
-            textBox2.TabIndex = 3;
+            PasswordTextBox.Location = new Point(210, 146);
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.PasswordChar = '*';
+            PasswordTextBox.Size = new Size(160, 27);
+            PasswordTextBox.TabIndex = 3;
             // 
-            // label2
+            // UserLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 20);
-            label2.TabIndex = 5;
-            label2.Text = "username(CNP)";
+            UserLabel.AutoSize = true;
+            UserLabel.Location = new Point(64, 65);
+            UserLabel.Name = "UserLabel";
+            UserLabel.Size = new Size(111, 20);
+            UserLabel.TabIndex = 5;
+            UserLabel.Text = "username(CNP)";
             // 
-            // label3
+            // PasswordLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(21, 135);
-            label3.Name = "label3";
-            label3.Size = new Size(72, 20);
-            label3.TabIndex = 6;
-            label3.Text = "password";
+            PasswordLabel.AutoSize = true;
+            PasswordLabel.Location = new Point(103, 146);
+            PasswordLabel.Name = "PasswordLabel";
+            PasswordLabel.Size = new Size(72, 20);
+            PasswordLabel.TabIndex = 6;
+            PasswordLabel.Text = "password";
             // 
-            // textBox3
+            // NumeTextBox
             // 
-            textBox3.Location = new Point(431, 61);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 7;
+            NumeTextBox.Location = new Point(524, 65);
+            NumeTextBox.Name = "NumeTextBox";
+            NumeTextBox.Size = new Size(125, 27);
+            NumeTextBox.TabIndex = 7;
             // 
-            // textBox4
+            // AdresaTextBox
             // 
-            textBox4.Location = new Point(431, 124);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 8;
+            AdresaTextBox.Location = new Point(524, 125);
+            AdresaTextBox.Name = "AdresaTextBox";
+            AdresaTextBox.Size = new Size(125, 27);
+            AdresaTextBox.TabIndex = 8;
             // 
-            // textBox5
+            // TelefonTextBox
             // 
-            textBox5.Location = new Point(431, 175);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 9;
+            TelefonTextBox.Location = new Point(524, 178);
+            TelefonTextBox.Name = "TelefonTextBox";
+            TelefonTextBox.Size = new Size(125, 27);
+            TelefonTextBox.TabIndex = 9;
             // 
-            // label5
+            // NumeLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(320, 64);
-            label5.Name = "label5";
-            label5.Size = new Size(105, 20);
-            label5.TabIndex = 11;
-            label5.Text = "nume complet";
+            NumeLabel.AutoSize = true;
+            NumeLabel.Location = new Point(413, 65);
+            NumeLabel.Name = "NumeLabel";
+            NumeLabel.Size = new Size(105, 20);
+            NumeLabel.TabIndex = 11;
+            NumeLabel.Text = "nume complet";
             // 
-            // label6
+            // AdresaLabel
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(346, 128);
-            label6.Name = "label6";
-            label6.Size = new Size(53, 20);
-            label6.TabIndex = 12;
-            label6.Text = "adresa";
+            AdresaLabel.AutoSize = true;
+            AdresaLabel.Location = new Point(440, 125);
+            AdresaLabel.Name = "AdresaLabel";
+            AdresaLabel.Size = new Size(53, 20);
+            AdresaLabel.TabIndex = 12;
+            AdresaLabel.Text = "adresa";
             // 
-            // label7
+            // TelefonLabel
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(346, 178);
-            label7.Name = "label7";
-            label7.Size = new Size(56, 20);
-            label7.TabIndex = 13;
-            label7.Text = "telefon";
+            TelefonLabel.AutoSize = true;
+            TelefonLabel.Location = new Point(440, 185);
+            TelefonLabel.Name = "TelefonLabel";
+            TelefonLabel.Size = new Size(56, 20);
+            TelefonLabel.TabIndex = 13;
+            TelefonLabel.Text = "telefon";
+            // 
+            // BackButton
+            // 
+            BackButton.Location = new Point(35, 338);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(94, 29);
+            BackButton.TabIndex = 14;
+            BackButton.Text = "Back";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += BackButton_Click;
+            // 
+            // NewAccountButton
+            // 
+            NewAccountButton.Location = new Point(524, 338);
+            NewAccountButton.Name = "NewAccountButton";
+            NewAccountButton.Size = new Size(107, 29);
+            NewAccountButton.TabIndex = 15;
+            NewAccountButton.Text = "New Account";
+            NewAccountButton.UseVisualStyleBackColor = true;
+            NewAccountButton.Click += NewAccountButton_Click;
+            // 
+            // AlreadyHasAccountButton
+            // 
+            AlreadyHasAccountButton.Location = new Point(515, 338);
+            AlreadyHasAccountButton.Name = "AlreadyHasAccountButton";
+            AlreadyHasAccountButton.Size = new Size(116, 29);
+            AlreadyHasAccountButton.TabIndex = 16;
+            AlreadyHasAccountButton.Text = "I have account";
+            AlreadyHasAccountButton.UseVisualStyleBackColor = true;
+            AlreadyHasAccountButton.Click += AlreadyHasAccountButton_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 319);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(679, 384);
+            Controls.Add(AlreadyHasAccountButton);
+            Controls.Add(NewAccountButton);
+            Controls.Add(BackButton);
+            Controls.Add(TelefonLabel);
+            Controls.Add(AdresaLabel);
+            Controls.Add(NumeLabel);
+            Controls.Add(TelefonTextBox);
+            Controls.Add(AdresaTextBox);
+            Controls.Add(NumeTextBox);
+            Controls.Add(PasswordLabel);
+            Controls.Add(UserLabel);
+            Controls.Add(PasswordTextBox);
+            Controls.Add(UsernameTextBox);
+            Controls.Add(SignUpButton);
+            Controls.Add(LoginButton);
             Name = "Login";
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
@@ -171,16 +210,21 @@
 
         private Button button1;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label2;
-        private Label label3;
+        private TextBox UsernameTextBox;
+        private TextBox PasswordTextBox;
+        private Label UserLabel;
+        private Label PasswordLabel;
         private BindingSource bindingSource1;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private Label label5;
-        private Label label6;
-        private Label label7;
+        private TextBox NumeTextBox;
+        private TextBox AdresaTextBox;
+        private TextBox TelefonTextBox;
+        private Label NumeLabel;
+        private Label AdresaLabel;
+        private Label TelefonLabel;
+        private Button LoginButton;
+        private Button SignUpButton;
+        private Button BackButton;
+        private Button NewAccountButton;
+        private Button AlreadyHasAccountButton;
     }
 }

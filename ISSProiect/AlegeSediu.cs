@@ -32,6 +32,24 @@ namespace ISSProiect
             SediiDataGridView.DataSource = dt;
         }
 
+        private void SelectButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
+                int id = Int32.Parse(SediiDataGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+
+                Sediu sediu = service.findSediu(id);
+
+                Login login = new Login(service,sediu, this);
+                login.Text = "Login at location: " + sediu.Nume;
+                this.Hide();
+                login.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

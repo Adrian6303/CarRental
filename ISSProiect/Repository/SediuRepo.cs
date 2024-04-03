@@ -43,15 +43,33 @@ public class SediuRepo : IRepository<int, Sediu>
         }
         catch (Exception e)
         {
-            throw new Exception(e.Message);
             cs.Close();
+            throw new Exception(e.Message);
         }
         
     }
 
     public Sediu? findOne(int id)
     {
-        throw new NotImplementedException();
+        try { 
+            da.SelectCommand = new SqlCommand("Select * from Sediu where id = @id", cs);
+            da.SelectCommand.Parameters.AddWithValue("@id", id);
+            ds.Clear();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+            DataRow dr = ds.Tables[0].Rows[0];
+            Sediu s = new Sediu(dr["nume"].ToString(), dr["adresa"].ToString());
+            s.Id = Convert.ToInt32(dr["id"]);
+            return s;
+        }
+        catch (Exception e)
+        {
+            cs.Close();
+            throw new Exception(e.Message);
+        }
     }
 
     public void save(Sediu entity)

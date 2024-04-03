@@ -60,6 +60,7 @@
             SelectButton.TabIndex = 2;
             SelectButton.Text = "Select";
             SelectButton.UseVisualStyleBackColor = true;
+            SelectButton.Click += SelectButton_Click;
             // 
             // AlegeSediu
             // 

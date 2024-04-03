@@ -31,6 +31,7 @@
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
+            LogoutButton = new Button();
             SuspendLayout();
             // 
             // button1
@@ -60,11 +61,22 @@
             label1.TabIndex = 2;
             label1.Text = "Alege actiunea dorita";
             // 
+            // LogoutButton
+            // 
+            LogoutButton.Location = new Point(220, 227);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(94, 29);
+            LogoutButton.TabIndex = 3;
+            LogoutButton.Text = "Logout";
+            LogoutButton.UseVisualStyleBackColor = true;
+            LogoutButton.Click += LogoutButton_Click;
+            // 
             // Optiune
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(531, 268);
+            Controls.Add(LogoutButton);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -79,5 +91,6 @@
         private Button button1;
         private Button button2;
         private Label label1;
+        private Button LogoutButton;
     }
 }
