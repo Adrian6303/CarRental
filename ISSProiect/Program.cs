@@ -20,8 +20,9 @@ namespace ISSProiect
             MasinaRepo masinaRepo = new MasinaRepo(ConectionString);
             ClientRepo clientRepo = new ClientRepo(ConectionString);
             InchiriereRepo inchiriereRepo = new InchiriereRepo(ConectionString);
+            ApartineRepo apartineRepo = new ApartineRepo(ConectionString);
             
-            Service service = new Service(sediuRepo, masinaRepo, clientRepo, inchiriereRepo);
+            Service service = new Service(sediuRepo, masinaRepo, clientRepo, inchiriereRepo, apartineRepo);
             
             ApplicationConfiguration.Initialize();
             Application.Run(new AlegeSediu(service));

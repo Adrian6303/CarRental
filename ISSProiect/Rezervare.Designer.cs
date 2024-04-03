@@ -28,51 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
+            MasiniDataGridView = new DataGridView();
+            StartDateTimePicker = new DateTimePicker();
+            RezervaButton = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            DescriereTextBox = new TextBox();
+            BackButton = new Button();
+            SearchButton = new Button();
+            NrZileNumericUpDown = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)MasiniDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NrZileNumericUpDown).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // MasiniDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(74, 169);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(626, 274);
-            dataGridView1.TabIndex = 0;
+            MasiniDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MasiniDataGridView.Location = new Point(74, 169);
+            MasiniDataGridView.Name = "MasiniDataGridView";
+            MasiniDataGridView.RowHeadersWidth = 51;
+            MasiniDataGridView.RowTemplate.Height = 29;
+            MasiniDataGridView.Size = new Size(626, 274);
+            MasiniDataGridView.TabIndex = 0;
+            MasiniDataGridView.RowHeaderMouseClick += MasiniDataGridView_RowHeaderMouseClick;
             // 
-            // dateTimePicker1
+            // StartDateTimePicker
             // 
-            dateTimePicker1.Location = new Point(74, 64);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 1;
+            StartDateTimePicker.Location = new Point(74, 64);
+            StartDateTimePicker.Name = "StartDateTimePicker";
+            StartDateTimePicker.Size = new Size(250, 27);
+            StartDateTimePicker.TabIndex = 1;
             // 
-            // comboBox1
+            // RezervaButton
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(410, 63);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(451, 490);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 3;
-            button1.Text = "Reserva";
-            button1.UseVisualStyleBackColor = true;
+            RezervaButton.Location = new Point(451, 490);
+            RezervaButton.Name = "RezervaButton";
+            RezervaButton.Size = new Size(94, 29);
+            RezervaButton.TabIndex = 3;
+            RezervaButton.Text = "Rezerva";
+            RezervaButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -110,44 +106,77 @@
             label4.TabIndex = 7;
             label4.Text = "Descriere masina";
             // 
-            // textBox1
+            // DescriereTextBox
             // 
-            textBox1.Location = new Point(740, 215);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(264, 27);
-            textBox1.TabIndex = 8;
+            DescriereTextBox.Location = new Point(740, 215);
+            DescriereTextBox.Multiline = true;
+            DescriereTextBox.Name = "DescriereTextBox";
+            DescriereTextBox.Size = new Size(264, 171);
+            DescriereTextBox.TabIndex = 8;
+            // 
+            // BackButton
+            // 
+            BackButton.Location = new Point(50, 523);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(94, 29);
+            BackButton.TabIndex = 9;
+            BackButton.Text = "Back";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += BackButton_Click;
+            // 
+            // SearchButton
+            // 
+            SearchButton.Location = new Point(606, 62);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(94, 29);
+            SearchButton.TabIndex = 10;
+            SearchButton.Text = "Search";
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
+            // 
+            // NrZileNumericUpDown
+            // 
+            NrZileNumericUpDown.Location = new Point(441, 62);
+            NrZileNumericUpDown.Name = "NrZileNumericUpDown";
+            NrZileNumericUpDown.Size = new Size(86, 27);
+            NrZileNumericUpDown.TabIndex = 11;
             // 
             // Rezervare
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 589);
-            Controls.Add(textBox1);
+            Controls.Add(NrZileNumericUpDown);
+            Controls.Add(SearchButton);
+            Controls.Add(BackButton);
+            Controls.Add(DescriereTextBox);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(dataGridView1);
+            Controls.Add(RezervaButton);
+            Controls.Add(StartDateTimePicker);
+            Controls.Add(MasiniDataGridView);
             Name = "Rezervare";
             Text = "Rezervare";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MasiniDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NrZileNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
-        private Button button1;
+        private DataGridView MasiniDataGridView;
+        private DateTimePicker StartDateTimePicker;
+        private Button RezervaButton;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox DescriereTextBox;
+        private Button BackButton;
+        private Button SearchButton;
+        private NumericUpDown NrZileNumericUpDown;
     }
 }

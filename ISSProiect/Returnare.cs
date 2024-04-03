@@ -7,15 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ISSProiect.service;
+using ISSProiect.Domain;
 
 namespace ISSProiect
 {
     public partial class Returnare : Form
     {
-        public Returnare()
+        Service service;
+        Sediu sediu;
+        Client client;
+        Optiune optiune;
+        public Returnare(Service service,Sediu sediu, Client client, Optiune optiune)
         {
             InitializeComponent();
+            this.service = service;
+            this.sediu = sediu;
+            this.client = client;
+            this.optiune = optiune;
         }
 
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            optiune.Show();
+            this.Close();
+        }
     }
 }

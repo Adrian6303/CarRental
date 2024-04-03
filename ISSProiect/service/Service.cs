@@ -16,13 +16,15 @@ public class Service
     private MasinaRepo masinaRepo;
     private ClientRepo clientRepo;
     private InchiriereRepo inchiriereRepo;
+    private ApartineRepo apartineRepo;
 
-    public Service(SediuRepo sediuRepo, MasinaRepo masinaRepo, ClientRepo clientRepo, InchiriereRepo inchiriereRepo)
+    public Service(SediuRepo sediuRepo, MasinaRepo masinaRepo, ClientRepo clientRepo, InchiriereRepo inchiriereRepo, ApartineRepo apartineRepo)
     {
         this.sediuRepo = sediuRepo;
         this.masinaRepo = masinaRepo;
         this.clientRepo = clientRepo;
         this.inchiriereRepo = inchiriereRepo;
+        this.apartineRepo = apartineRepo;
     }
 
     //Add
@@ -116,5 +118,22 @@ public class Service
     }
 
 
+    //Other
+    public bool existsApartine(int id_sediu, string id_masina)
+    {
+        return apartineRepo.exists(id_sediu, id_masina);
+    }
 
+    public List<Masina> findMasiniAvailableBySediu(Sediu sediu)
+    {
+        List<Masina> masini = new List<Masina>();
+        foreach (Masina m in masinaRepo.findAll().ToList())
+        {
+            if (existsApartine(sediu.Id, m.Id) == true && m.Stare == "disponibil")
+            {
+                masini.Add(m);
+            }
+        }
+        return masini;
+    }
 }

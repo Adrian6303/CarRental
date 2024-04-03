@@ -31,6 +31,7 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             button1 = new Button();
+            BackButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -62,11 +63,22 @@
             button1.Text = "Returneaza";
             button1.UseVisualStyleBackColor = true;
             // 
+            // BackButton
+            // 
+            BackButton.Location = new Point(49, 391);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(94, 29);
+            BackButton.TabIndex = 3;
+            BackButton.Text = "Back";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += BackButton_Click;
+            // 
             // Returnare
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BackButton);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -82,5 +94,6 @@
         private Label label1;
         private DataGridView dataGridView1;
         private Button button1;
+        private Button BackButton;
     }
 }

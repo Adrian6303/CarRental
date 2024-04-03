@@ -11,14 +11,14 @@ namespace ISSProiect
         DataSet ds = new DataSet();
         public AlegeSediu(Service service)
         {
-
-            this.service = service;
             InitializeComponent();
+            this.service = service;
             AlegeSediu_Load();
         }
 
         private void AlegeSediu_Load()
         {
+            this.Text = "Alege Sediu";
 
             SediiDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataTable dt = new DataTable();

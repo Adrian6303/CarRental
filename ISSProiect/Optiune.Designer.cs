@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            InchiriazaButton = new Button();
+            ReturneazaButton = new Button();
             label1 = new Label();
             LogoutButton = new Button();
             SuspendLayout();
             // 
-            // button1
+            // InchiriazaButton
             // 
-            button1.Location = new Point(112, 137);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Inchiriaza";
-            button1.UseVisualStyleBackColor = true;
+            InchiriazaButton.Location = new Point(112, 137);
+            InchiriazaButton.Name = "InchiriazaButton";
+            InchiriazaButton.Size = new Size(94, 29);
+            InchiriazaButton.TabIndex = 0;
+            InchiriazaButton.Text = "Inchiriaza";
+            InchiriazaButton.UseVisualStyleBackColor = true;
+            InchiriazaButton.Click += InchiriazaButton_Click;
             // 
-            // button2
+            // ReturneazaButton
             // 
-            button2.Location = new Point(337, 137);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Returneaza";
-            button2.UseVisualStyleBackColor = true;
+            ReturneazaButton.Location = new Point(337, 137);
+            ReturneazaButton.Name = "ReturneazaButton";
+            ReturneazaButton.Size = new Size(94, 29);
+            ReturneazaButton.TabIndex = 1;
+            ReturneazaButton.Text = "Returneaza";
+            ReturneazaButton.UseVisualStyleBackColor = true;
+            ReturneazaButton.Click += ReturneazaButton_Click;
             // 
             // label1
             // 
@@ -78,8 +80,8 @@
             ClientSize = new Size(531, 268);
             Controls.Add(LogoutButton);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(ReturneazaButton);
+            Controls.Add(InchiriazaButton);
             Name = "Optiune";
             Text = "Optiune";
             ResumeLayout(false);
@@ -88,8 +90,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button InchiriazaButton;
+        private Button ReturneazaButton;
         private Label label1;
         private Button LogoutButton;
     }

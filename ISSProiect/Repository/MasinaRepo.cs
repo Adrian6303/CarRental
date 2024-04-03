@@ -13,6 +13,7 @@ public class MasinaRepo : IRepository<string, Masina>
 {
     SqlConnection cs = new SqlConnection();
     SqlDataAdapter da = new SqlDataAdapter();
+    DataSet ds = new DataSet();
 
     public MasinaRepo(string ConectionString)
     {
@@ -27,7 +28,25 @@ public class MasinaRepo : IRepository<string, Masina>
 
     public IEnumerable<Masina> findAll()
     {
-        throw new NotImplementedException();
+        try
+        {
+            da.SelectCommand = new SqlCommand("Select * from Masina", cs);
+            IList<Masina> masini = new List<Masina>();
+            ds.Clear();
+            da.Fill(ds);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Masina m = new Masina(dr["marca"].ToString(), dr["model"].ToString(), dr["descriere"].ToString(), dr["stare"].ToString());
+                m.Id = dr["vin"].ToString();
+                masini.Add(m);
+            }
+            return masini;
+        }
+        catch (Exception e)
+        {
+            cs.Close();
+            throw new Exception(e.Message);
+        }
     }
 
     public Masina? findOne(string id)

@@ -19,11 +19,11 @@ namespace ISSProiect
         AlegeSediu alegeSediu;
 
         public Login(Service service, Sediu sediu, AlegeSediu alegeSediu)
-        {
+        {   
+            InitializeComponent();
             this.service = service;
             this.sediu = sediu;
             this.alegeSediu = alegeSediu;
-            InitializeComponent();
             Login_Load();
 
         }
@@ -108,7 +108,7 @@ namespace ISSProiect
                 AdresaTextBox.Clear();
                 TelefonTextBox.Clear();
                 Optiune optiune = new Optiune(service, sediu, client, this);
-                optiune.Text = "Alege optiunea";
+                optiune.Text = client.Nume +": Alege optiunea";
                 this.Hide();
                 optiune.Show();
             }
