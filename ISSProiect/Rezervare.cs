@@ -73,6 +73,17 @@ namespace ISSProiect
                 int nrZile = Int32.Parse(NrZileNumericUpDown.Text);
                 Masina masina = (Masina)MasiniDataGridView.CurrentRow.DataBoundItem;
                 Inchiriere inchiriere = new Inchiriere(client.Id, masina.Id, dataInchiriere, nrZile);
+                List<Inchiriere> inchirieri = service.findAllInchirieri();
+                foreach(Inchiriere i in inchirieri)
+                {
+                    if(i.Vin_masina == masina.Id)
+                    {
+                        LoadRezervare();
+                        MessageBox.Show("Masina este deja rezervata!");
+                        
+                        return;
+                    }
+                }
                 service.addInchiriere(inchiriere);
                 service.updateMasinaStare(masina);
                 MessageBox.Show("Masina a fost rezervata cu succes!");
