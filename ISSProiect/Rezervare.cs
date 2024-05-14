@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ISSProiect.service;
 using ISSProiect.Domain;
+using ISSProiect.utils;
 
 namespace ISSProiect
 {
 
-    public partial class Rezervare : Form
+    public partial class Rezervare : Form, Observer
     {
         Service service;
         Sediu sediu;
@@ -23,6 +24,7 @@ namespace ISSProiect
         {
             InitializeComponent();
             this.service = service;
+            service.addObserver(this);
             this.sediu = sediu;
             this.client = client;
             this.optiune = optiune;
@@ -31,9 +33,7 @@ namespace ISSProiect
 
         public void LoadRezervare()
         {
-            StartDateTimePicker.Value = DateTime.Now;
-            StartDateTimePicker.MinDate = DateTime.Now;
-            StartDateTimePicker.MaxDate = DateTime.Now.AddDays(90);
+            MasiniDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             NrZileNumericUpDown.Value = 1;
             NrZileNumericUpDown.Minimum = 1;
             NrZileNumericUpDown.Maximum = 30;
@@ -55,25 +55,35 @@ namespace ISSProiect
             this.Close();
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void MasiniDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DescriereTextBox.Text = MasiniDataGridView.SelectedRows[0].Cells["Descriere"].Value.ToString();
+        }
+
+        public void update()
+        {
+            LoadRezervare();
+        }
+
+        private void RezervaButton_Click(object sender, EventArgs e)
         {
             try
             {
-                DateTime dataInchiriere = StartDateTimePicker.Value;
+                DateTime dataInchiriere = DateTime.Now;
                 int nrZile = Int32.Parse(NrZileNumericUpDown.Text);
-
-
+                Masina masina = (Masina)MasiniDataGridView.CurrentRow.DataBoundItem;
+                Inchiriere inchiriere = new Inchiriere(client.Id, masina.Id, dataInchiriere, nrZile);
+                service.addInchiriere(inchiriere);
+                service.updateMasinaStare(masina);
+                MessageBox.Show("Masina a fost rezervata cu succes!");
+                optiune.Show();
+                this.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void MasiniDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DescriereTextBox.Text = MasiniDataGridView.SelectedRows[0].Cells["Descriere"].Value.ToString();
         }
     }
 }

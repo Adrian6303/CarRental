@@ -61,6 +61,24 @@ public class MasinaRepo : IRepository<string, Masina>
 
     public void update(Masina entity)
     {
-        throw new NotImplementedException();
+        try
+        {
+            da.UpdateCommand = new SqlCommand("Update Masina set marca = @marca, model = @model, descriere = @descriere, stare = @stare where vin = @vin", cs);
+            da.UpdateCommand.Parameters.AddWithValue("@marca", entity.Marca);
+            da.UpdateCommand.Parameters.AddWithValue("@model", entity.Model);
+            da.UpdateCommand.Parameters.AddWithValue("@descriere", entity.Descriere);
+            da.UpdateCommand.Parameters.AddWithValue("@stare", entity.Stare);
+            da.UpdateCommand.Parameters.AddWithValue("@vin", entity.Id);
+
+            cs.Open();
+            da.UpdateCommand.ExecuteNonQuery();
+            cs.Close();
+
+        }
+        catch (Exception e)
+        {
+            cs.Close();
+            throw new Exception(e.Message);
+        }
     }
 }

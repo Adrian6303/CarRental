@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
+            MasiniDataGridView = new DataGridView();
+            ReturneazaButton = new Button();
             BackButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MasiniDataGridView).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -44,24 +44,25 @@
             label1.TabIndex = 0;
             label1.Text = "Alege Masina ce doresti sa o returnezi";
             // 
-            // dataGridView1
+            // MasiniDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(121, 90);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(508, 188);
-            dataGridView1.TabIndex = 1;
+            MasiniDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MasiniDataGridView.Location = new Point(121, 90);
+            MasiniDataGridView.Name = "MasiniDataGridView";
+            MasiniDataGridView.RowHeadersWidth = 51;
+            MasiniDataGridView.RowTemplate.Height = 29;
+            MasiniDataGridView.Size = new Size(508, 188);
+            MasiniDataGridView.TabIndex = 1;
             // 
-            // button1
+            // ReturneazaButton
             // 
-            button1.Location = new Point(322, 333);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Returneaza";
-            button1.UseVisualStyleBackColor = true;
+            ReturneazaButton.Location = new Point(322, 333);
+            ReturneazaButton.Name = "ReturneazaButton";
+            ReturneazaButton.Size = new Size(94, 29);
+            ReturneazaButton.TabIndex = 2;
+            ReturneazaButton.Text = "Returneaza";
+            ReturneazaButton.UseVisualStyleBackColor = true;
+            ReturneazaButton.Click += ReturneazaButton_Click;
             // 
             // BackButton
             // 
@@ -79,12 +80,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(BackButton);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(ReturneazaButton);
+            Controls.Add(MasiniDataGridView);
             Controls.Add(label1);
             Name = "Returnare";
             Text = "Returnare";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MasiniDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -92,8 +93,8 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private DataGridView MasiniDataGridView;
+        private Button ReturneazaButton;
         private Button BackButton;
     }
 }
